@@ -1,0 +1,12 @@
+from django.contrib import admin
+
+from blog.models import Article
+
+
+class ArticleAdmin(admin.ModelAdmin):
+    list_display = ('title', 'content', 'pub_time')
+    list_filter = ('pub_time',)  # 过滤器
+
+
+
+admin.site.register(Article, ArticleAdmin)
